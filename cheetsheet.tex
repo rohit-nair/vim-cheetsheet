@@ -1,0 +1,230 @@
+\title{VIM CHEETSHEET}
+\author{
+  Rohit Nair
+}
+
+\documentclass[10pt,a4paper,landscape]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{fullpage}
+\usepackage{xcolor,listings}
+
+\setlength\columnsep{30pt}
+
+\begin{document}
+
+\begin{multicols}{3}
+
+
+  \subsubsection*{
+    GLOBAL
+    }
+    
+    \colorbox{gray!20}{\lstinline{:q}}                  quit Vim. This fails when changes have been made. Use !. \\
+    \colorbox{gray!20}{\lstinline{:help keyword}}       open help for keyword \\
+    \colorbox{gray!20}{\lstinline{:saveas file}}        save file as \\
+    \colorbox{gray!20}{\lstinline{:close}}              close current pane \\
+    \colorbox{gray!20}{\lstinline{K}}                   open man page for word under the cursor \\
+    
+    \subsubsection*{
+    CURSOR MOVEMENTS
+    }
+    
+    \colorbox{gray!20}{\lstinline{h}}                   move left \\
+    \colorbox{gray!20}{\lstinline{j}}                   move down \\
+    \colorbox{gray!20}{\lstinline{k}}                   move up \\
+    \colorbox{gray!20}{\lstinline{l}}                   move right \\
+\\
+    \colorbox{gray!20}{\lstinline{w}}                   jump by start of words (punctuation considered words) \\
+    \colorbox{gray!20}{\lstinline{e}}                   jump to end of words (punctuation considered words) \\
+    \colorbox{gray!20}{\lstinline{b}}                   jump backward by words (punctuation considered words) \\
+\\
+    \colorbox{gray!20}{\lstinline{\^}}                  first non-blank character of line \\
+    \colorbox{gray!20}{\lstinline{0}}                   (zero) start of line \\
+    \colorbox{gray!20}{\lstinline{\$}}                   end of line \\
+\\
+    \colorbox{gray!20}{\lstinline{gg}}                  go to first line \\
+    \colorbox{gray!20}{\lstinline{G}}                   go to last line \\
+    \colorbox{gray!20}{\lstinline{:n}}                  go To line n \\
+    \colorbox{gray!20}{\lstinline{nG}}                  go To line n \\
+\\
+    \colorbox{gray!20}{\lstinline{)}}                   move the cursor forward to the next sentence. \\
+    \colorbox{gray!20}{\lstinline{(}}                   move the cursor backward by a sentence. \\
+    \colorbox{gray!20}{\lstinline{\{}}                  move the cursor a paragraph backwards \\
+    \colorbox{gray!20}{\lstinline{\}}}                  move the cursor a paragraph forwards \\
+\\
+    \colorbox{gray!20}{\lstinline{H}}                   move the cursor to the top of the screen. \\
+    \colorbox{gray!20}{\lstinline{M}}                   move the cursor to the middle of the screen. \\
+    \colorbox{gray!20}{\lstinline{L}}                   move the cursor to the bottom of the screen. \\
+\\
+    \colorbox{gray!20}{\lstinline{CTRL-f}}              move the cursor forward by a screen of text \\
+    \colorbox{gray!20}{\lstinline{CTRL-b}}              move the cursor backward by a screen of text \\
+    \colorbox{gray!20}{\lstinline{CTRL-u}}              move the cursor up by half a screen \\
+    \colorbox{gray!20}{\lstinline{CTRL-d}}              move the cursor down by half a screen \\
+    
+    
+    \subsubsection*{
+    INSERT MODE
+    }
+    
+    \colorbox{gray!20}{\lstinline{i}}                   start insert mode at cursor \\
+    \colorbox{gray!20}{\lstinline{I}}                   insert at the beginning of the line \\
+    \colorbox{gray!20}{\lstinline{A}}                   append at the end of the line \\
+ \\
+    \colorbox{gray!20}{\lstinline{a}}                   append after the cursor \\
+    \colorbox{gray!20}{\lstinline{O}}                   open blank line above current line \\
+    \colorbox{gray!20}{\lstinline{o}}                   open (append) blank line below current line \\
+    \colorbox{gray!20}{\lstinline{Esc}}                 exit insert mode \\
+    
+    
+    \subsubsection*{
+    EDITING
+    }
+    
+    \colorbox{gray!20}{\lstinline{u}}                   undo \\
+    \colorbox{gray!20}{\lstinline{CTRL-r}}              redo \\
+ \\
+    \colorbox{gray!20}{\lstinline{>>}}                  indent line one column to right \\
+    \colorbox{gray!20}{\lstinline{==}}                  auto-indent current line \\
+    \colorbox{gray!20}{\lstinline{<<}}                  indent line one column to left \\
+ \\
+    \colorbox{gray!20}{\lstinline{J}}                   join line below to the current one \\
+    \colorbox{gray!20}{\lstinline{cc}}                  change (replace) an entire line \\
+ \\
+    \colorbox{gray!20}{\lstinline{ddp}}                 swap current line with next \\
+    \colorbox{gray!20}{\lstinline{ddkp}}                swap current line with previous \\
+    
+    
+    
+    \subsubsection*{
+    DELETING TEXT
+    }
+    
+    \colorbox{gray!20}{\lstinline{x}}                   delete current character \\
+    \colorbox{gray!20}{\lstinline{X}}                   delete previous character \\
+    \colorbox{gray!20}{\lstinline{dw}}                  delete the current word \\
+    \colorbox{gray!20}{\lstinline{dd}}                  delete (cut) a line \\
+    \colorbox{gray!20}{\lstinline{D}}                   delete from cursor to end of line \\
+    \colorbox{gray!20}{\lstinline{:[range]d}}           delete [range] lines \\
+    
+    
+    
+    \subsubsection*{
+    COPYING AND MOVING TEXT
+    }
+    
+    \colorbox{gray!20}{\lstinline{yw}}                  yank word \\
+    \colorbox{gray!20}{\lstinline{yy}}                  yank (copy) a line \\
+    \colorbox{gray!20}{\lstinline{2yy}}                 yank 2 lines \\
+    \colorbox{gray!20}{\lstinline{y\$}}                  yank to end of line \\
+    \colorbox{gray!20}{\lstinline{p}}                   put (paste) the clipboard after cursor/current line \\
+\\
+    \colorbox{gray!20}{\lstinline{:set paste}}          avoid unexpected effects in pasting \\
+\\
+    \colorbox{gray!20}{\lstinline{>}}                   shift right \\
+    \colorbox{gray!20}{\lstinline{<}}                   shift left \\
+    
+    
+    \subsubsection*{
+    VISUAL MODE
+    }
+    
+    \colorbox{gray!20}{\lstinline{v}}                   start visual mode, mark lines, then do command (such as y-yank) \\
+    \colorbox{gray!20}{\lstinline{V}}                   start linewise visual mode \\
+    \colorbox{gray!20}{\lstinline{CTRL-v}}              start visual block mode \\
+\\
+    \colorbox{gray!20}{\lstinline{ab}}                  a () block (with braces) \\
+    \colorbox{gray!20}{\lstinline{ab}}                  a {} block (with brackets) \\
+    \colorbox{gray!20}{\lstinline{ib}}                  inner () block \\
+    \colorbox{gray!20}{\lstinline{ib}}                  inner {} block \\
+\\
+    \colorbox{gray!20}{\lstinline{v\%}}                  selects matching parenthesis \\
+    \colorbox{gray!20}{\lstinline{vi\{}}                 selects matching curly brace \\
+    \colorbox{gray!20}{\lstinline{vi"}}                 selects text between double quotes \\
+    \colorbox{gray!20}{\lstinline{vi'}}                 selects text between single quotes \\
+    
+    
+    \subsubsection*{
+    EXITING
+    }
+    
+    \colorbox{gray!20}{\lstinline{:q}}                  quit Vim. This fails when changes have been made. \\
+    \colorbox{gray!20}{\lstinline{:q!}}                 quit without writing. \\
+    \colorbox{gray!20}{\lstinline{ZZ}}                  write current file, if modified, and exit. \\
+    \colorbox{gray!20}{\lstinline{:wq}}                 write the current file and exit. \\
+    \colorbox{gray!20}{\lstinline{:wq {file}}}          write to {file}. Exit if not editing the last \\
+    \colorbox{gray!20}{\lstinline{:[range]wq[!]}}       same as above, but only write the lines in [range]. \\
+    
+    
+    
+    \subsubsection*{
+    SEARCH/REPLACE
+    }
+    
+    \colorbox{gray!20}{\lstinline{/pattern}}                    search for pattern \\
+    \colorbox{gray!20}{\lstinline{?pattern}}                    search backward for pattern \\
+    \colorbox{gray!20}{\lstinline{n}}                           repeat search in same direction \\
+    \colorbox{gray!20}{\lstinline{N}}                           repeat search in opposite direction \\
+    \colorbox{gray!20}{\lstinline{*}}                           search forward, word under cursor \\
+    \colorbox{gray!20}{\lstinline{\#}}                           search backward, word under cursor \\
+    \colorbox{gray!20}{\lstinline{:\%s/old/new/g}}               replace all old with new throughout file \\
+    \colorbox{gray!20}{\lstinline{:\%s/old/new/gc}}              replace all old with new throughout file with confirmation \\
+    \colorbox{gray!20}{\lstinline{:argdo \%s/old/new/gc | wq}}   open multiple files and run this command to replace old with new in every file with confirmation, save and quit \\
+    
+    
+    \subsubsection*{
+    WINDOWS
+    }
+    
+    \colorbox{gray!20}{\lstinline{:sp f}}               split open f \\
+    \colorbox{gray!20}{\lstinline{:vsp f}}              vsplit open f \\
+    \colorbox{gray!20}{\lstinline{CTRL-w s}}            split windows \\
+    \colorbox{gray!20}{\lstinline{CTRL-w w}}            switch between windows \\
+    \colorbox{gray!20}{\lstinline{CTRL-w T}}            move the current split window into its own tab \\
+    \colorbox{gray!20}{\lstinline{CTRL-w q}}            quit a window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w v}}            split windows vertically \\
+    \colorbox{gray!20}{\lstinline{CTRL-w x}}            swap windows \\
+    \colorbox{gray!20}{\lstinline{CTRL-w h}}            left window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w j}}            down window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w k}}            up window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w l}}            right window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w +}}            increase window height \\
+    \colorbox{gray!20}{\lstinline{CTRL-w -}}            decrease window height \\
+    \colorbox{gray!20}{\lstinline{CTRL-w <}}            increase window width \\
+    \colorbox{gray!20}{\lstinline{CTRL-w >}}            decrease window width \\
+    \colorbox{gray!20}{\lstinline{CTRL-w =}}            equal window \\
+    \colorbox{gray!20}{\lstinline{CTRL-w o}}            close other windows \\
+    
+    
+    \subsubsection*{
+    TABS
+    }
+    
+    \colorbox{gray!20}{\lstinline{:tabnew file}}        open a file in a new tab \\
+    \colorbox{gray!20}{\lstinline{gt|:tabnext|:tabn}}   move to the next tab \\
+    \colorbox{gray!20}{\lstinline{gT|:tabprev|:tabp}}   move to the previous tab \\
+    \colorbox{gray!20}{\lstinline{:tabmove n}}          move current tab to the nth position (indexed from 0) \\
+    \colorbox{gray!20}{\lstinline{:tabclose|:tabc}}     close the current tab and all its windows \\
+    \colorbox{gray!20}{\lstinline{:tabonly|:tabo}}      close all tabs except for the current one \\
+    \colorbox{gray!20}{\lstinline{:tabdo command}}      run the command on all tabs (e.g. :tabdo q - closes all opened tabs) \\
+    
+    
+    \subsubsection*{
+    PLUGINS CHEAT
+    }
+    
+    \colorbox{gray!20}{\lstinline{:Cheat}}              open cheat sheet (with autocomplete) \\
+    \colorbox{gray!20}{\lstinline{<leader>ch}}          open cheat sheet for word under the cursor \\
+    
+\end{multicols}
+
+\end{document}
+Sources:
+
+https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/vim.txt
+
+https://vim.rtorr.com/
