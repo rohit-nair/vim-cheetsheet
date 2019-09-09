@@ -1,5 +1,9 @@
 # Vim Cheetsheet
 
+_With Extra Power of Line_
+
+![Vim](static/vim.jpg)
+
 ## Formats
 * Plain text
 * Markdown
